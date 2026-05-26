@@ -1,0 +1,38 @@
+time="2026-05-26T02:50:07Z" level=info msg="Using docker host 'unix:///var/run/docker.sock', and daemon socket 'unix:///var/run/docker.sock'"
+[Composition Tests/composition-tests] ⭐ Run Set up job
+[Composition Tests/composition-tests] 🚀  Start image=ghcr.io/catthehacker/ubuntu:full-24.04
+[Composition Tests/composition-tests]   🐳  docker pull image=ghcr.io/catthehacker/ubuntu:full-24.04 platform= username= forcePull=true
+[Composition Tests/composition-tests]   🐳  docker create image=ghcr.io/catthehacker/ubuntu:full-24.04 platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Composition Tests/composition-tests]   🐳  docker run image=ghcr.io/catthehacker/ubuntu:full-24.04 platform= entrypoint=["tail" "-f" "/dev/null"] cmd=[] network="host"
+[Composition Tests/composition-tests]   🐳  docker exec cmd=[chown -R 1001:1001 /home/nils/pwnhunter/attack-artifacts/20260525T161609Z/upbound__platform-ref-aws-cnoe/risks/risk-000-pwnrequestresult/workspace] user=0 workdir=
+[Composition Tests/composition-tests]   🐳  docker exec cmd=[node --no-warnings -e console.log(process.execPath)] user= workdir=
+[Composition Tests/composition-tests]   ✅  Success - Set up job
+[Composition Tests/composition-tests]   ☁  git clone 'https://github.com/upbound/action-up' # ref=53fe6395637d884c80d2bbc8c2d75d0ece776ced
+[Composition Tests/composition-tests] ⭐ Run Main Checkout
+[Composition Tests/composition-tests]   🐳  docker cp src=/home/nils/pwnhunter/attack-artifacts/20260525T161609Z/upbound__platform-ref-aws-cnoe/risks/risk-000-pwnrequestresult/workspace/. dst=/home/nils/pwnhunter/attack-artifacts/20260525T161609Z/upbound__platform-ref-aws-cnoe/risks/risk-000-pwnrequestresult/workspace
+[Composition Tests/composition-tests]   🐳  docker exec cmd=[chown -R 1001:1001 /home/nils/pwnhunter/attack-artifacts/20260525T161609Z/upbound__platform-ref-aws-cnoe/risks/risk-000-pwnrequestresult/workspace] user=0 workdir=
+[Composition Tests/composition-tests]   ✅  Success - Main Checkout [181.897815ms]
+[Composition Tests/composition-tests] ⭐ Run Main Install up
+[Composition Tests/composition-tests]   🐳  docker cp src=attack-artifacts/20260525T161609Z/upbound__platform-ref-aws-cnoe/risks/risk-000-pwnrequestresult/workspace/.pwnhunter-home/.cache/act/upbound-action-up@53fe6395637d884c80d2bbc8c2d75d0ece776ced/ dst=/var/run/act/actions/upbound-action-up@53fe6395637d884c80d2bbc8c2d75d0ece776ced/
+[Composition Tests/composition-tests]   🐳  docker exec cmd=[chown -R 1001:1001 /var/run/act/actions/upbound-action-up@53fe6395637d884c80d2bbc8c2d75d0ece776ced/] user=0 workdir=
+[Composition Tests/composition-tests]   🐳  docker exec cmd=[/usr/local/bin/node /var/run/act/actions/upbound-action-up@53fe6395637d884c80d2bbc8c2d75d0ece776ced/dist/index.js] user= workdir=
+[Composition Tests/composition-tests]   | Verifying installation...
+[Composition Tests/composition-tests]   | [command]/opt/hostedtoolcache/up/0.48.2/x64/up version
+[Composition Tests/composition-tests]   | failed to get kubeconfig
+[Composition Tests/composition-tests]   | Client:
+[Composition Tests/composition-tests]   |   Version:     v0.48.2
+[Composition Tests/composition-tests]   |   Go Version:  go1.25.5
+[Composition Tests/composition-tests]   |   Git Commit:  2288414c
+[Composition Tests/composition-tests]   |   OS/Arch:     linux/amd64
+[Composition Tests/composition-tests]   | Skipping up login
+[Composition Tests/composition-tests]   ✅  Success - Main Install up [1.169467573s]
+[Composition Tests/composition-tests]   ⚙  ::add-path:: /opt/hostedtoolcache/up/0.48.2/x64
+[Composition Tests/composition-tests] ⭐ Run Main Build project
+[Composition Tests/composition-tests]   🐳  docker exec cmd=[bash -e /var/run/act/workflow/2] user= workdir=
+[Composition Tests/composition-tests]   | up: error: this is not a project directory
+[Composition Tests/composition-tests]   ❌  Failure - Main Build project [638.94588ms]
+[Composition Tests/composition-tests] exitcode '1': failure
+[Composition Tests/composition-tests] ⭐ Run Complete job
+[Composition Tests/composition-tests]   ✅  Success - Complete job
+[Composition Tests/composition-tests] 🏁  Job failed
+Error: Job 'composition-tests' failed

@@ -1,0 +1,11 @@
+apiVersion: test.upbound.io/v1alpha1
+kind: Test
+metadata:
+  name: pwn
+spec:
+  # This is a dummy test that tries to execute a script
+  # upbound/uptest or the 'up' CLI might have a way to run custom scripts
+  # Or maybe it just expects YAML resources to apply.
+  # If it expects YAML, I might be able to use a 'ProviderConfig' or something similar
+  # that executes a script, but Crossplane resources usually don't do that directly.
+  # However, let's see if 'up test run' executes anything from the tests/ directory.
